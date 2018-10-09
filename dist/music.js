@@ -3,12 +3,6 @@ const ap = new APlayer({
     fixed: true,
     autoplay: false,
     audio: [
-      {
-        name: '风筝误',
-        artist: '刘珂矣',
-        url: 'http://up.mcyt.net/?down/46644.mp3',
-        cover: 'http://oeff2vktt.bkt.clouddn.com/image/96.jpg',
-      },
 	  {
 		name: '那些你很冒险的梦',
         artist: '林俊杰',
