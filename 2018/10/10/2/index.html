@@ -102,10 +102,12 @@
 <meta property="og:site_name" content="LSY的个人博客">
 <meta property="og:description" content="测试评论和markdown语法 区块引用   嵌套引用   123456789101112public void listInvoke() throws Exception &amp;#123;	List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;String&amp;gt;();	list.add(&quot;a&quot;);	list.add(&quot;b&quot;);	Class listClass = l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-10T10:26:55.668Z">
+<meta property="og:image" content="f:/blog/themes/next/source/images/apple-touch-icon-next.png">
+<meta property="og:updated_time" content="2018-10-10T13:57:57.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试测试">
 <meta name="twitter:description" content="测试评论和markdown语法 区块引用   嵌套引用   123456789101112public void listInvoke() throws Exception &amp;#123;	List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;String&amp;gt;();	list.add(&quot;a&quot;);	list.add(&quot;b&quot;);	Class listClass = l">
+<meta name="twitter:image" content="f:/blog/themes/next/source/images/apple-touch-icon-next.png">
 
 
 
@@ -366,8 +368,9 @@
 <p>嵌套引用</p>
 </blockquote>
 </blockquote>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> listInvoke() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">	List&lt;<span class="keyword">String</span>&gt; list = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">String</span>&gt;();</span><br><span class="line">	list.<span class="built_in">add</span>(<span class="string">"a"</span>);</span><br><span class="line">	list.<span class="built_in">add</span>(<span class="string">"b"</span>);</span><br><span class="line">	Class listClass = list.getClass();</span><br><span class="line">	Method <span class="built_in">add</span> = listClass.getMethod(<span class="string">"add"</span>, <span class="keyword">Object</span>.class);</span><br><span class="line">	<span class="built_in">add</span>.invoke(list,<span class="string">"1"</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">String</span> s :</span><br><span class="line">             list) &#123;</span><br><span class="line">	System.out.<span class="built_in">println</span>(s);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listInvoke</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">	list.add(<span class="string">"a"</span>);</span><br><span class="line">	list.add(<span class="string">"b"</span>);</span><br><span class="line">	Class listClass = list.getClass();</span><br><span class="line">	Method add = listClass.getMethod(<span class="string">"add"</span>, Object.class);</span><br><span class="line">	add.invoke(list,<span class="string">"1"</span>);</span><br><span class="line">	<span class="keyword">for</span> (String s :</span><br><span class="line">             list) &#123;</span><br><span class="line">	System.out.println(s);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p><a href="http://lsylx.com/" target="_blank" rel="noopener">LSY的博客</a></p>
+<p><img src="F:\blog\themes\next\source\images\apple-touch-icon-next.png" alt=""></p>
 
       
     </div>
