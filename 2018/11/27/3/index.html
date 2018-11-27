@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="支付宝支付," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="支付宝当面付（条码支付）官方参考文档：https://docs.open.alipay.com/194/105072/ 一．账号初始配置1.身份选择登录蚂蚁金服开放平台之后，需要选择入驻身份，身份确定了你要开发哪种应用，开发自研应用（只供自己使用）就选择自研开发者。  2.完善信息和拓展身份2.1完善信息1）进入主界面后，点击右上角账户信息，进入账户管理/合作伙伴管理界面。  2）在账户管理/合作">
+<meta name="keywords" content="支付宝支付">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/3/index.html">
+<meta property="og:site_name" content="LSY的个人博客">
+<meta property="og:description" content="支付宝当面付（条码支付）官方参考文档：https://docs.open.alipay.com/194/105072/ 一．账号初始配置1.身份选择登录蚂蚁金服开放平台之后，需要选择入驻身份，身份确定了你要开发哪种应用，开发自研应用（只供自己使用）就选择自研开发者。  2.完善信息和拓展身份2.1完善信息1）进入主界面后，点击右上角账户信息，进入账户管理/合作伙伴管理界面。  2）在账户管理/合作">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image002.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image003.png">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image004.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image005.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image007.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image009.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image011.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image013.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image015.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image017.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image019.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image021.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image023.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image025.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image027.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image029.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image031.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image033.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image035.jpg">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/1542764979129.png">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image037.png">
+<meta property="og:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image039.jpg">
+<meta property="og:updated_time" content="2018-11-27T06:59:19.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3">
+<meta name="twitter:description" content="支付宝当面付（条码支付）官方参考文档：https://docs.open.alipay.com/194/105072/ 一．账号初始配置1.身份选择登录蚂蚁金服开放平台之后，需要选择入驻身份，身份确定了你要开发哪种应用，开发自研应用（只供自己使用）就选择自研开发者。  2.完善信息和拓展身份2.1完善信息1）进入主界面后，点击右上角账户信息，进入账户管理/合作伙伴管理界面。  2）在账户管理/合作">
+<meta name="twitter:image" content="c:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image002.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/27/3/"/>
+
+
+
+
+
+  <title>3 | LSY的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LSY的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LSY">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LSY的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T14:24:03+08:00">
+                2018-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/支付/" itemprop="url" rel="index">
+                    <span itemprop="name">支付</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="支付宝当面付（条码支付）"><a href="#支付宝当面付（条码支付）" class="headerlink" title="支付宝当面付（条码支付）"></a>支付宝当面付（条码支付）</h2><p>官方参考文档：<a href="https://docs.open.alipay.com/194/105072/" target="_blank" rel="noopener">https://docs.open.alipay.com/194/105072/</a></p>
+<h3 id="一．账号初始配置"><a href="#一．账号初始配置" class="headerlink" title="一．账号初始配置"></a>一．账号初始配置</h3><h4 id="1-身份选择"><a href="#1-身份选择" class="headerlink" title="1.身份选择"></a>1.身份选择</h4><p>登录蚂蚁金服开放平台之后，需要选择入驻身份，身份确定了你要开发哪种应用，开发自研应用（只供自己使用）就选择自研开发者。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image002.jpg" alt="img"></p>
+<h4 id="2-完善信息和拓展身份"><a href="#2-完善信息和拓展身份" class="headerlink" title="2.完善信息和拓展身份"></a>2.完善信息和拓展身份</h4><h6 id="2-1完善信息"><a href="#2-1完善信息" class="headerlink" title="2.1完善信息"></a>2.1完善信息</h6><p>1）进入主界面后，点击右上角账户信息，进入账户管理/合作伙伴管理界面。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image003.png" alt="img"></p>
+<p>2）在账户管理/合作伙伴管理界面完善和修改账户信息。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image004.jpg" alt="img"></p>
+<p>3）然后签署协议</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image005.jpg" alt="img"></p>
+<h6 id="2-2拓展身份"><a href="#2-2拓展身份" class="headerlink" title="2.2拓展身份"></a>2.2拓展身份</h6><p>1）在账户管理/合作伙伴管理界面下方有角色身份一栏，如需要开发其他种类应用，可以点击“立即扩展”按钮进行身份扩展。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image007.jpg" alt="img"></p>
+<h3 id="二．沙箱环境应用配置"><a href="#二．沙箱环境应用配置" class="headerlink" title="二．沙箱环境应用配置"></a>二．沙箱环境应用配置</h3><p>点击开发者中心-研发服务-沙箱环境，进入沙箱环境页面，沙箱环境有三个信息，沙箱应用，沙箱账号，沙箱工具。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image009.jpg" alt="img"></p>
+<h4 id="1-沙箱应用"><a href="#1-沙箱应用" class="headerlink" title="1.   沙箱应用"></a>1.   沙箱应用</h4><p>进入沙箱环境页面后，可以看到系统已经自动为你创建一个应用。</p>
+<h6 id="1-1必看部分"><a href="#1-1必看部分" class="headerlink" title="1.1必看部分"></a>1.1必看部分</h6><p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image011.jpg" alt="img"></p>
+<p>参数介绍：</p>
+<p>1）APPID：沙箱环境自动生成，且唯一，必须与代码中APPID一致。</p>
+<p>2）支付宝网关：沙箱环境自动生成，必须与代码一致，如果应用上线，代码中该地址配置为<a href="https://openapi.alipay.com/gateway.do" target="_blank" rel="noopener">https://openapi.alipay.com/gateway.do</a>，即去除地址中的dev字段。</p>
+<p>3）RSA2（SHA256）密钥：必填，如未配置，该参数后只显示“设置应用公钥”，点击下载签名验签工具，下载解压后如图所示。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image013.jpg" alt="img"></p>
+<p>进入文件夹，运行bat后缀程序。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image015.jpg" alt="img"></p>
+<p>如下图所示，弹出工具框，根据开发语言选择密钥格式，因为目前新建应用只支持RSA2签名方式，所以密钥长度选择2048方可生效。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image017.jpg" alt="img"></p>
+<h6 id="1-2选看部分"><a href="#1-2选看部分" class="headerlink" title="1.2选看部分"></a>1.2选看部分</h6><p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image019.jpg" alt="img"></p>
+<p>1）  应用网关：选填，用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收开发者门店被动通知，一旦填入之后，该项就不能为空了，一般不需要配置。</p>
+<p>2）  授权回调地址：选填，第三方授权或用户信息授权后回调地址。授权链接中配置的redirect_uri的值必须与此值保持一致，一旦填入之后，该项就不能为空了，一般不需要配置。</p>
+<p>3）  RSA（SHA1）密钥：选填，推荐使用RSA2（SHA256）密钥，如果在上方配置已经配置过，该处不需要配置。</p>
+<p>4）  AES密钥：选填，对请求的报文内容进行加密，提高安全性，如果使用了该密钥，还需要在代码中对响应内容进行解密处理。</p>
+<h4 id="2-沙箱账号"><a href="#2-沙箱账号" class="headerlink" title="2.   沙箱账号"></a>2.   沙箱账号</h4><p>主要就是商家账号和买家账号，测试可以使用买家账号付款，也可以进行充值等操作。买家账号只能用于支付宝沙箱环境app。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image021.jpg" alt="img"></p>
+<h4 id="3-沙箱工具"><a href="#3-沙箱工具" class="headerlink" title="3.   沙箱工具"></a>3.   沙箱工具</h4><p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image023.jpg" alt="img"></p>
+<h3 id="三．正式环境应用创建流程及配置"><a href="#三．正式环境应用创建流程及配置" class="headerlink" title="三．正式环境应用创建流程及配置"></a>三．正式环境应用创建流程及配置</h3><p>可参考官方文档<a href="https://docs.open.alipay.com/194/105072/" target="_blank" rel="noopener">https://docs.open.alipay.com/194/105072/</a>中条码支付接入指引。</p>
+<h4 id="1-创建应用指南"><a href="#1-创建应用指南" class="headerlink" title="1.   创建应用指南"></a>1.   创建应用指南</h4><p>开发者使用支付宝账号<a href="https://auth.alipay.com/login/index.htm?goto=https%3A%2F%2Fopenhome.alipay.com%2Fplatform%2FmanageApp.htm" target="_blank" rel="noopener">登录</a>开放平台（需实名认证的支付宝账号），进入开发者中心。<img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image025.jpg" alt="img"></p>
+<h4 id="2-选择应用类型"><a href="#2-选择应用类型" class="headerlink" title="2.   选择应用类型"></a>2.   选择应用类型</h4><p>1）  应用类型分为自研发和第三方研发两种，根据自己业务需求选择应用类型，企业自研发请选择网页移动应用，小程序，生活号。 </p>
+<p>2）  为企业或商户代开发，请选择第三方应用，上线后获取商户授权。</p>
+<h4 id="3-创建应用"><a href="#3-创建应用" class="headerlink" title="3.   创建应用"></a>3.   创建应用</h4><p>1）  从开发者中心首页创建。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image027.jpg" alt="img"></p>
+<p>2）  也可进入应用列表创建，比如创建网页应用。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image029.jpg" alt="img"></p>
+<p>3）  填写应用基础信息。</p>
+<p>使用场景：第三方应用服务于商户，自用型应用是为自己或自己的公司开发应用</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image031.jpg" alt="img"></p>
+<p>4）  应用图标最好自己做，以防与他人图标重复，导致审核不通过，官方说明一个月只能有两次审核机会。在下方添加应用需要开发的功能。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image033.jpg" alt="img"></p>
+<p>5）  配置密钥，该密钥的生成方式与沙箱环境的生成方式一致，通过点击设置应用公钥，下载工具进行生成即可。</p>
+<p>应用网关：选填，用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收 <a href="https://docs.open.alipay.com/205/105251#s1" target="_blank" rel="noopener">开发者门店被动通知</a>。</p>
+<p>授权回调地址：选填，第三方授权或用户信息授权后回调地址。<img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image035.jpg" alt="img"></p>
+<p>下方为本地生成密钥效果图</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/1542764979129.png" alt="img"></p>
+<p>6）  待审核通过后，用户即可上线。当面付功能需要进行签约，签约完成后，待审核通过，应用投入使用。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image037.png" alt="image"></p>
+<h3 id="四．代码配置流程"><a href="#四．代码配置流程" class="headerlink" title="四．代码配置流程"></a>四．代码配置流程</h3><h4 id="1-准备材料及说明"><a href="#1-准备材料及说明" class="headerlink" title="1.   准备材料及说明"></a>1.   准备材料及说明</h4><p>SDK及各种官方支付Demo下载：</p>
+<p><a href="https://docs.open.alipay.com/54/cyz7do/" target="_blank" rel="noopener">https://docs.open.alipay.com/54/cyz7do/</a></p>
+<h4 id="2-代码配置"><a href="#2-代码配置" class="headerlink" title="2.   代码配置"></a>2.   代码配置</h4><p>以开发项目中用到的当面付demo为例。</p>
+<h6 id="2-1项目结构"><a href="#2-1项目结构" class="headerlink" title="2.1项目结构"></a>2.1项目结构</h6><p>### 当面付2.0demo代码结构TradePayDemo ###<br> src<br> <code>-- main
+     |-- java
+     |</code>– com<br>     |       <code>-- alipay
+     |</code>– demo<br>     |               <code>-- trade
+     |</code>– Main.java  ## 当面付2.0调用范例 ##<br>     |– lib  依赖类库<br>     |   |– alipay-sdk-java20150625220051.jar<br>     |   |– alipay-trade-sdk.jar  TradePaySDK创建的lib<br>     |   |– commons-codec-1.10.jar<br>     |   |– commons-configuration-1.10.jar<br>     |   |– commons-lang-2.6.jar<br>     |   |– commons-logging-1.1.1.jar<br>     |   |– core-2.1.jar<br>     |   |– gson-2.3.1.jar<br>     |   <code>-- hamcrest-core-1.3.jar</code>– resources</p>
+<h6 id="2-2集成至项目步骤"><a href="#2-2集成至项目步骤" class="headerlink" title="2.2集成至项目步骤"></a>2.2集成至项目步骤</h6><p>集成至商户系统步骤如下:</p>
+<p>1）  拷贝java目录下的Main.java至系统商源代码目录。</p>
+<p>2）  将lib目录下所有jar文件添加至系统商lib目录。</p>
+<p>3）  拷贝resources目录下的配置文件至系统商classpath根目录。</p>
+<p>4）  在系统商项目中运行Main方法，确认集成无误。</p>
+<p>5）  系统商使用main方法中的调用样例进行商户端系统开发。</p>
+<h6 id="2-3配置文件说明"><a href="#2-3配置文件说明" class="headerlink" title="2.3配置文件说明"></a>2.3配置文件说明</h6><p>所有重要信息都在zfbinfo.properties配置文件中配置。如图。</p>
+<p><img src="C:/Users/hp/Desktop/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%BD%93%E9%9D%A2%E4%BB%98%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/images/01/clip_image039.jpg" alt="img"></p>
+<h6 id="2-4签名和验签"><a href="#2-4签名和验签" class="headerlink" title="2.4签名和验签"></a>2.4签名和验签</h6><p>1）自定义接口，获取http请求中的参数，进行参数拆分与拼接。</p>
+<p>2）扫码支付需要进行异步验签，验签成功返回success，支付宝才能够确认为该订单支付成功。</p>
+<p>3）条码支付不需要进行异步验签，同步方法中已自动进行验签。</p>
+<p>4）官方验签说明文档：<a href="https://docs.open.alipay.com/291/105974" target="_blank" rel="noopener">https://docs.open.alipay.com/291/105974</a></p>
+<p>5）以下代码是官方提供的验签方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取支付宝POST过来反馈信息</span></span><br><span class="line">		Map&lt;String, String&gt; params = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">		Map requestParams = request.getParameterMap();</span><br><span class="line">		<span class="keyword">for</span> (Iterator iter = requestParams.keySet().iterator(); iter.hasNext();) &#123;</span><br><span class="line">			String name = (String) iter.next();</span><br><span class="line">			String[] values = (String[]) requestParams.get(name);</span><br><span class="line">			String valueStr = <span class="string">""</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; values.length; i++) &#123;</span><br><span class="line">				valueStr = (i == values.length - <span class="number">1</span>) ? valueStr + values[i]</span><br><span class="line">						: valueStr + values[i] + <span class="string">","</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 乱码解决，这段代码在出现乱码时使用。</span></span><br><span class="line">			<span class="comment">// valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");</span></span><br><span class="line">			params.put(name, valueStr);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 切记alipaypublickey是支付宝的公钥，请去open.alipay.com对应应用下查看。</span></span><br><span class="line">		<span class="comment">// boolean AlipaySignature.rsaCheckV1(Map&lt;String, String&gt; params, String</span></span><br><span class="line">		<span class="comment">// publicKey, String charset, String sign_type)</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">boolean</span> flag = AlipaySignature.rsaCheckV1(params,</span><br><span class="line">					prop.getProperty(<span class="string">"alipay_public_key"</span>), <span class="string">"UTF-8"</span>, <span class="string">"RSA2"</span>);</span><br><span class="line">			<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (AlipayApiException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"false"</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/支付宝支付/" <i class="fa fa-tag"></i> 支付宝支付</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/10/2/" rel="next" title="测试测试">
+                <i class="fa fa-chevron-left"></i> 测试测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.png"
+                alt="LSY" />
+            
+              <p class="site-author-name" itemprop="name">LSY</p>
+              <p class="site-description motion-element" itemprop="description">不要放慢脚步！</p>
+          </div>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+		  
+          
+          
+
+          
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+		  
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支付宝当面付（条码支付）"><span class="nav-number">1.</span> <span class="nav-text">支付宝当面付（条码支付）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一．账号初始配置"><span class="nav-number">1.1.</span> <span class="nav-text">一．账号初始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-身份选择"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.身份选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-完善信息和拓展身份"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.完善信息和拓展身份</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-1完善信息"><span class="nav-number">1.1.2.0.1.</span> <span class="nav-text">2.1完善信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-2拓展身份"><span class="nav-number">1.1.2.0.2.</span> <span class="nav-text">2.2拓展身份</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二．沙箱环境应用配置"><span class="nav-number">1.2.</span> <span class="nav-text">二．沙箱环境应用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-沙箱应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.   沙箱应用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1必看部分"><span class="nav-number">1.2.1.0.1.</span> <span class="nav-text">1.1必看部分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2选看部分"><span class="nav-number">1.2.1.0.2.</span> <span class="nav-text">1.2选看部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-沙箱账号"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.   沙箱账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-沙箱工具"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.   沙箱工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三．正式环境应用创建流程及配置"><span class="nav-number">1.3.</span> <span class="nav-text">三．正式环境应用创建流程及配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建应用指南"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.   创建应用指南</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-选择应用类型"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.   选择应用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建应用"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.   创建应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四．代码配置流程"><span class="nav-number">1.4.</span> <span class="nav-text">四．代码配置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-准备材料及说明"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.   准备材料及说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-代码配置"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.   代码配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-1项目结构"><span class="nav-number">1.4.2.0.1.</span> <span class="nav-text">2.1项目结构</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-2集成至项目步骤"><span class="nav-number">1.4.2.0.2.</span> <span class="nav-text">2.2集成至项目步骤</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-3配置文件说明"><span class="nav-number">1.4.2.0.3.</span> <span class="nav-text">2.3配置文件说明</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-4签名和验签"><span class="nav-number">1.4.2.0.4.</span> <span class="nav-text">2.4签名和验签</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LSY</span>
+
+  
+</div>
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>总访客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '25ec9109d82b6636ee74',
+		  clientSecret: 'a95b8fcddb45aab0bdc3c7af0e13db237e4abe97',
+		  repo: 'git',
+		  owner: 'someonejustlikeyou',
+		  admin: ['someonejustlikeyou'], 
+		  id: window.location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
